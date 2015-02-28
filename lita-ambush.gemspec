@@ -1,11 +1,11 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-ambush"
-  spec.version       = "0.0.1"
-  spec.authors       = ["JJ Asghar"]
-  spec.email         = ["jj@getchef.com"]
-  spec.description   = %q{TODO: Add a description}
-  spec.summary       = %q{TODO: Add a summary}
-  spec.homepage      = "TODO: Add a homepage"
+  spec.version       = "1.0.0"
+  spec.authors       = ["JJ Asghar","Chris Baker","Greg Kitson"]
+  spec.email         = ["jjasghar@gmail.com","dosman711@gmail.com","greg.kitson@gmail.com"]
+  spec.description   = %q{Allow lita to ambush your users}
+  spec.summary       = %q{Allow lita store ambushs for your users, so you can leave messages in the chats for later}
+  spec.homepage      = "http://github.com/jjasghar/lita-ambush"
   spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "handler" }
 
@@ -22,4 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", ">= 3.0.0"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "coveralls"
+  spec.add_development_dependency "pry"
 end
