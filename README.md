@@ -1,5 +1,6 @@
 # lita-ambush
 
+[![Build Status](https://travis-ci.org/jjasghar/lita-ambush.svg?branch=master)](https://travis-ci.org/jjasghar/lita-ambush)[![Coverage Status](https://coveralls.io/repos/jjasghar/lita-ambush/badge.svg?branch=master)](https://coveralls.io/r/jjasghar/lita-ambush?branch=master)
 
 **lita-ambush** is a handler for [Lita](http://lita.io/) that stores messages for a user and displays
 them the next time they say something.
