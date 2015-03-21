@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-ambush"
-  spec.version       = "1.0.0"
+  spec.version       = "1.0.1"
   spec.authors       = ["JJ Asghar","Chris Baker","Greg Kitson"]
   spec.email         = ["jjasghar@gmail.com","dosman711@gmail.com","greg.kitson@gmail.com"]
   spec.description   = %q{Allow lita to ambush your users}
