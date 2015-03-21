@@ -4,7 +4,7 @@ module Lita
   module Handlers
     class Ambush < Handler
 
-      route(/^ambush:\s+(\S+):\s(.+)/, :ambush, command: true)
+      route(/^ambush\s+(\S+):\s(.+)/, :ambush, command: true, help: { "ambush USER: message" => "Ambushes the USER with the message you leave."} )
       route(/./, :response)
 
       def ambush(request)
