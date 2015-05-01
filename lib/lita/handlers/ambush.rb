@@ -1,4 +1,3 @@
-require 'time'
 require 'yaml'
 
 module Lita
