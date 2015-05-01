@@ -11,7 +11,6 @@ module Lita
       def ambush(request)
         ambushee = request.matches[0][0]
         ambushee = ambushee[1..-1] if ambushee.start_with? "@"
-        require 'pry'; binding.pry
         store_hash = {
           time: ::Time.now.to_i,
           msg: request.matches[0][1],
