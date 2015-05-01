@@ -22,7 +22,6 @@ module Lita
 
       def response(request)
         unless request.message.body.start_with? "ambush"
-          require 'pry'; binding.pry
           stored_yaml = redis.rpop(request.user.mention_name)
           while not stored_yaml.nil? do
             outputted_yaml=YAML.load(stored_yaml)
