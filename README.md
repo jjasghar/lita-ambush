@@ -29,10 +29,14 @@ None
 ## Usage
 
 ```
-user1> lita ambush user2: Ohai! You forgot your card at lunch!
-Lita> Ambush Prepared
-user2> That was a great lunch!
-Lita> user2: while you were out, user1 said: Ohai! You forgot your card at lunch!
+13:44 <j^2> j2bot: ambush dosman711: you smell like a ferret 
+13:44 <j2bot> j^2 I've stored the ambush
+13:44 <j^2> j2bot: ambush awaxa you also smell like a ferret 
+13:44 <j2bot> j^2 I've stored the ambush
+13:44 <dosman711> ferrets are cute
+13:45 <j2bot> dosman711: While you were out, j^2 said: you smell like a ferret
+13:45 <awaxa> i like ferrets too!
+13:45 <j2bot> awaxa: While you were out, j^2 said: you also smell like a ferret
 ```
 
 ## License
