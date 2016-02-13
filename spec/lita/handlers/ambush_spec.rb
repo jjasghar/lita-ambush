@@ -3,7 +3,7 @@ require 'yaml'
 
 describe Lita::Handlers::Ambush, lita_handler: true do
 
-  it { is_expected.to route("ambush: user1: this is a taco!") }
+  it { is_expected.to route_event(:unhandled_message).to(:response) }
 
   it "testing the storage into redis" do
     user1 = Lita::User.create(123, name: "user1")
@@ -28,11 +28,6 @@ describe Lita::Handlers::Ambush, lita_handler: true do
     outputted_yaml=YAML.load(redis_rpop)
     expect(outputted_yaml[:msg]).to eq('this is a burruto!')
   end
-
-  it { is_expected.to route(".....") }
-  it { is_expected.to route("blah!") }
-  it { is_expected.to route("I like to dance!") }
-  it { is_expected.to route("this isn't what i signned up to do!") }
 
   it "should respond with the message stored" do
     user1 = Lita::User.create(123, name: "user1")
