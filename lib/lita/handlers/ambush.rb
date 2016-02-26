@@ -5,7 +5,7 @@ module Lita
     class Ambush < Handler
 
       route(/^ambush\s+(\S+):?\s*(.+)/, :ambush, command: true, help: { "ambush USER: message" => "Ambushes the USER with the message you leave."} )
-      route(/./, :response)
+      on :unhandled_message, :response
 
       def ambush(request)
         ambushee = request.matches[0][0]
@@ -20,13 +20,16 @@ module Lita
         request.reply_with_mention("I've stored the ambush")
       end
 
-      def response(request)
-        unless request.message.body.start_with? "ambush"
-          stored_yaml = redis.rpop(request.user.mention_name)
+      def response(payload)
+        message = payload[:message]
+        unless message.body.start_with? "ambush"
+          user = message.source.user
+          stored_yaml = redis.rpop(user.mention_name)
           while not stored_yaml.nil? do
             outputted_yaml=YAML.load(stored_yaml)
-            request.reply_with_mention("While you were out, #{outputted_yaml[:ambusher]} said: #{outputted_yaml[:msg]}")
-            stored_yaml = redis.rpop(request.user.mention_name)
+            reply = "While you were out, #{outputted_yaml[:ambusher]} said: #{outputted_yaml[:msg]}"
+            robot.send_message_with_mention(message.source, reply)
+            stored_yaml = redis.rpop(user.mention_name)
           end
         end
       end
